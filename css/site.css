@@ -110,45 +110,42 @@ body {
   padding: 16px 20px;
 }
 
-/* Mobile header: theme + language toggles */
-.header-mobile-utils {
+/* Theme cycle button: one icon visible, changes with theme */
+.theme-cycle-btn {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.theme-toggle,
-.lang-toggle {
-  display: flex;
+  justify-content: center;
   border: 2px solid var(--color-text);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.theme-option,
-.lang-option {
-  padding: 4px 8px;
-  border: none;
-  background: transparent;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  background: var(--color-bg);
   color: var(--color-text);
   cursor: pointer;
-  opacity: 0.6;
+  padding: 0;
 }
 
-.theme-option:hover,
-.lang-option:hover {
-  opacity: 0.9;
+.header-mobile .theme-cycle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 20px;
 }
 
-.theme-option.active,
-.lang-option.active {
-  background: var(--color-text);
-  color: var(--color-bg);
+.theme-icon {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-theme="light"] .theme-moon,
+[data-theme="dark"] .theme-dot,
+[data-theme="color"] .theme-sun {
+  position: static;
   opacity: 1;
+}
+
+/* Colorful dot when in dark mode */
+[data-theme="dark"] .theme-dot {
+  color: var(--color-accent);
 }
 
 /* Hamburger / X button */
@@ -264,28 +261,11 @@ body {
     gap: 8px;
   }
 
-  .util-btn,
-  .util-lang {
+  .header-desktop .theme-cycle-btn {
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--color-text);
-    background-color: var(--color-bg);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-text);
-    cursor: pointer;
+    font-size: 18px;
   }
-
-  .util-lang {
-    flex-direction: column;
-    font-size: 10px;
-  }
-
-  .util-lang small { font-weight: 400; opacity: 0.8; }
 
   .header-nav {
     display: flex;
@@ -335,11 +315,10 @@ body {
     font-size: 28px;
   }
 
-  .util-btn,
-  .util-lang {
+  .header-desktop .theme-cycle-btn {
     width: 48px;
     height: 48px;
-    font-size: 12px;
+    font-size: 22px;
   }
 
   .header-nav {
