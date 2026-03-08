@@ -4,6 +4,15 @@
  * Three themes: Light, Dark, Color
  */
 
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("../media/ClashGrotesk_Complete/Fonts/WEB/fonts/ClashGrotesk-Variable.woff2") format("woff2"),
+       url("../media/ClashGrotesk_Complete/Fonts/WEB/fonts/ClashGrotesk-Variable.woff") format("woff");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 :root {
   /* Light mode (default) */
   --color-bg: #faf9f6;
@@ -14,9 +23,9 @@
   --color-accent: #5a7d4a;
   --color-accent-secondary: #5a7d4a;
 
-  /* Typography — DM Sans (UI), Source Serif 4 (display) */
-  --font-ui: "DM Sans", system-ui, sans-serif;
-  --font-display: "Source Serif 4", Georgia, serif;
+  /* Typography — Clash Grotesk (UI + display) */
+  --font-ui: "Clash Grotesk", system-ui, sans-serif;
+  --font-display: "Clash Grotesk", system-ui, sans-serif;
 
   /* Mobile spacing */
   --space-mobile-pad: 20px;
