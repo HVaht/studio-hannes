@@ -59,6 +59,11 @@ body {
   flex-shrink: 0;
 }
 
+/* When menu open: no line between X and links — they flow as one panel */
+.site-container.menu-open .site-header {
+  border-bottom: none;
+}
+
 /* Mobile header — simple grey bar when closed */
 .header-mobile {
   display: flex;
@@ -77,7 +82,7 @@ body {
 .header-mobile.open .logo-cell {
   flex: 1;
   border: 2px solid var(--color-text);
-  border-bottom: none;
+  border-bottom: 2px solid var(--color-text); /* Line under S/H only, not under X */
 }
 
 .header-mobile.open .hamburger {
@@ -146,7 +151,7 @@ body {
   display: none;
 }
 
-/* Mobile nav overlay — same grey as X, unified panel */
+/* Mobile nav overlay — same grey as X, flows as one panel (no top border) */
 .nav-mobile-overlay {
   display: none;
   flex-direction: column;

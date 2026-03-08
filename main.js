@@ -7,9 +7,11 @@ function toggleMenu() {
   const nav = document.getElementById('nav-mobile');
   const btn = document.getElementById('hamburger-btn');
   const header = document.querySelector('.header-mobile');
+  const container = document.querySelector('.site-container');
   if (nav) nav.classList.toggle('open');
   if (btn) btn.classList.toggle('open');
   if (header) header.classList.toggle('open');
+  if (container) container.classList.toggle('menu-open');
 }
 
 // Close mobile nav when clicking a link
@@ -18,6 +20,7 @@ document.querySelectorAll('.nav-mobile-overlay a').forEach(link => {
     document.getElementById('nav-mobile')?.classList.remove('open');
     document.getElementById('hamburger-btn')?.classList.remove('open');
     document.querySelector('.header-mobile')?.classList.remove('open');
+    document.querySelector('.site-container')?.classList.remove('menu-open');
   });
 });
 
