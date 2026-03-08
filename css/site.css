@@ -73,17 +73,25 @@ body {
   background-color: var(--color-border);
 }
 
-/* When menu is OPEN: bordered paper-style layout */
+/* When menu is OPEN: logo+theme in bordered cell, X separate */
 .header-mobile.open {
   padding: 0;
   align-items: stretch;
 }
 
-.header-mobile.open .logo-cell {
+.header-mobile-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.header-mobile.open .header-mobile-left {
   flex: 1;
   border: none;
   border-right: 2px solid var(--color-text);
-  border-bottom: 2px solid var(--color-text); /* Line under S/H only, divider to X+links */
+  border-bottom: 2px solid var(--color-text);
+  padding: 16px 20px;
 }
 
 .header-mobile.open .hamburger {
@@ -104,10 +112,6 @@ body {
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--color-text);
-}
-
-.header-mobile.open .logo-cell {
-  padding: 16px 20px;
 }
 
 /* Theme cycle button: icon only, no container */
