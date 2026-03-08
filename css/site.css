@@ -59,21 +59,39 @@ body {
   flex-shrink: 0;
 }
 
-/* Mobile header */
+/* Mobile header — simple grey bar when closed */
 .header-mobile {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: var(--color-border);
+}
+
+/* When menu is OPEN: bordered paper-style layout */
+.header-mobile.open {
+  padding: 0;
   align-items: stretch;
 }
 
-/* S/H in bordered grey cell */
-.logo-cell {
+.header-mobile.open .logo-cell {
   flex: 1;
+  border: 2px solid var(--color-text);
+  border-bottom: none;
+}
+
+.header-mobile.open .hamburger {
+  background-color: var(--color-panel);
+  border: 2px solid var(--color-text);
+  border-left: none;
+  border-bottom: none;
+  padding: 16px 20px;
+  min-width: 56px;
+}
+
+.logo-cell {
   display: flex;
   align-items: center;
-  padding: 16px 20px;
-  background-color: var(--color-border);
-  border: 2px solid var(--color-text);
-  border-bottom: none; /* site-header provides bottom line */
 }
 
 .logo-short {
@@ -84,21 +102,22 @@ body {
   color: var(--color-text);
 }
 
-/* X button: off-white bg, bordered (abuts logo-cell) */
+.header-mobile.open .logo-cell {
+  padding: 16px 20px;
+}
+
+/* Hamburger / X button */
 .hamburger {
   display: flex;
   flex-direction: column;
   gap: 5px;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-text);
-  border-left: none;
-  border-bottom: none;
+  background: none;
+  border: none;
   cursor: pointer;
-  padding: 16px 20px;
+  padding: 4px;
   position: relative;
-  min-width: 56px;
 }
 
 .hamburger span {
@@ -127,13 +146,13 @@ body {
   display: none;
 }
 
-/* Mobile nav overlay — paper-style with thick borders */
+/* Mobile nav overlay — same grey as X, unified panel */
 .nav-mobile-overlay {
   display: none;
   flex-direction: column;
   gap: 20px;
   padding: 24px 20px 32px;
-  background-color: var(--color-bg);
+  background-color: var(--color-panel);
   border-bottom: 2px solid var(--color-text);
 }
 

@@ -10,6 +10,7 @@
   --color-text: #2b2926;
   --color-text-muted: #6b6762;
   --color-border: #e5e3df;
+  --color-panel: #efedeb; /* Grey between header and page - X + menu links */
   --color-accent: #5a7d4a;
   --color-accent-secondary: #5a7d4a;
 
@@ -72,6 +73,7 @@
   --color-text: #2b2926;
   --color-text-muted: #6b6762;
   --color-border: #e5e3df;
+  --color-panel: #efedeb;
   --color-accent: #5a7d4a;
   --color-accent-secondary: #5a7d4a;
 }
@@ -83,6 +85,7 @@
   --color-text: #e8e6e2;
   --color-text-muted: #8a8580;
   --color-border: #3d3a37;
+  --color-panel: #2d2b2a;
   --color-accent: #5a7d4a;
   --color-accent-secondary: #7a9d6a;
 }
@@ -94,6 +97,7 @@
   --color-text: #2d2520;
   --color-text-muted: #7a6b5e;
   --color-border: #e8d9c8;
+  --color-panel: #f2ebe2;
   --color-accent: #c45c26;
   --color-accent-secondary: #5a7d4a;
 }
