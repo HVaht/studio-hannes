@@ -64,18 +64,17 @@ body {
   border-bottom: none;
 }
 
-/* Mobile header — simple grey bar when closed */
+/* Mobile header — same height open/closed, no wrapper padding */
 .header-mobile {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 0;
   background-color: var(--color-border);
 }
 
 /* When menu is OPEN: logo+theme in bordered cell, X separate */
 .header-mobile.open {
-  padding: 0;
   align-items: stretch;
 }
 
@@ -84,6 +83,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex: 1;
+  padding: 12px 20px;
 }
 
 .header-mobile.open .header-mobile-left {
@@ -91,7 +91,7 @@ body {
   border: none;
   border-right: 2px solid var(--color-text);
   border-bottom: 2px solid var(--color-text);
-  padding: 16px 20px;
+  padding: 12px 20px;
 }
 
 .header-mobile.open .hamburger {
@@ -166,7 +166,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 16px 20px;
+  padding: 12px 20px;
   min-width: 56px;
   flex-shrink: 0;
   position: relative;
