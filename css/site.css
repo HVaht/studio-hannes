@@ -338,7 +338,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 /* Hero image: full width edge to edge */
@@ -346,6 +346,7 @@ body {
   margin-left: -20px;
   margin-right: -20px;
   width: calc(100% + 40px);
+  line-height: 0;
 }
 
 .hero-image img {
@@ -379,23 +380,28 @@ body {
   }
 }
 
-.hero h1 {
+/* Section lead: bold/large inline with first sentence */
+.lead-in {
+  margin-top: 0;
+}
+
+.lead-in .lead {
   font-family: var(--font-display);
-  font-size: var(--text-heading-mobile);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.35em;
   color: var(--color-text);
-  margin: 0 0 16px;
 }
 
 @media (min-width: 768px) {
-  .hero h1 { font-size: var(--text-heading-tablet); }
+  .lead-in .lead { font-size: 1.5em; }
 }
 
 @media (min-width: 1025px) {
-  .hero h1 { font-size: var(--text-heading-desktop); }
+  .lead-in .lead { font-size: 1.6em; }
 }
 
-.hero p {
+.hero p,
+.lead-in {
   font-size: var(--text-body-mobile);
   color: var(--color-text-muted);
   line-height: 1.5;
@@ -405,14 +411,6 @@ body {
 /* Sections */
 .site-main section {
   margin-bottom: 40px;
-}
-
-.site-main h2 {
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 12px;
 }
 
 .site-main p {
@@ -430,7 +428,7 @@ body {
 .section-divider {
   border: none;
   border-top: 1px solid var(--color-border);
-  margin: 32px -20px 40px;
+  margin: 24px -20px 40px;
   width: calc(100% + 40px);
 }
 
