@@ -110,30 +110,36 @@ body {
   padding: 16px 20px;
 }
 
-/* Theme cycle button: one icon visible, changes with theme */
+/* Theme cycle button: icon only, no container */
 .theme-cycle-btn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--color-text);
-  background: var(--color-bg);
+  border: none;
+  background: none;
   color: var(--color-text);
   cursor: pointer;
-  padding: 0;
+  padding: 4px;
 }
 
 .header-mobile .theme-cycle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  width: 36px;
+  height: 36px;
   font-size: 20px;
 }
 
 .theme-icon {
   position: absolute;
+  width: 20px;
+  height: 20px;
   opacity: 0;
   pointer-events: none;
+}
+
+.header-mobile .theme-icon {
+  width: 22px;
+  height: 22px;
 }
 
 [data-theme="light"] .theme-moon,
@@ -262,9 +268,13 @@ body {
   }
 
   .header-desktop .theme-cycle-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-desktop .theme-icon {
+    width: 18px;
+    height: 18px;
   }
 
   .header-nav {
@@ -316,9 +326,13 @@ body {
   }
 
   .header-desktop .theme-cycle-btn {
-    width: 48px;
-    height: 48px;
-    font-size: 22px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .header-desktop .theme-icon {
+    width: 22px;
+    height: 22px;
   }
 
   .header-nav {
