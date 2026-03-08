@@ -1,0 +1,135 @@
+/* Root styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #F9FBFC;
+    --red: #ef4444;
+}
+
+
+
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+
+header {
+  background-color: rgb(55, 244, 231);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+
+
+
+
+
+
+
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+
+/* Logo Styling */
+#logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Navigation Styling */
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+#theme-button {
+  padding: 0;
+  border: none;
+  background: #7e6d9b;
+  }
+
+.hamburger-icon {
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+.nav-links-left {
+
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #7e6d9b;
+}
+
+.nav-links-left.active {
+    display: flex;
+}
+
+.nav-links-left a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* Centering elements */
+.center {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+
+/* Example of centered content within the container */
+.center-content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}

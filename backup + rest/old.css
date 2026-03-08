@@ -1,0 +1,66 @@
+/* styles for desktop devices */
+@media only screen and (min-width: 992px) {
+    body {
+      font-size: 16px;
+      width: 80%;
+      padding-top: 20px;
+      margin: auto;
+      background-color: aquamarine;
+    }
+    main {
+        width: 900px;
+        margin: 0 auto; /* Center the main content area on the page */
+        border: 4px solid black;
+        padding: 20px; /* Add some padding to the main content area */
+    }
+  }
+  
+  /* styles for tablet devices */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+      font-size: 14px;
+      width: 90%;
+      padding-top: 20px;
+      margin: auto;
+      background-color:blueviolet
+    }
+    main {
+        width: 650px;
+        margin: 0 auto; /* Center the main content area on the page */
+        border: 4px solid black;
+        padding: 20px; /* Add some padding to the main content area */
+    }
+  }
+  
+  /* styles for mobile devices */
+  @media only screen and (max-width: 767px) {
+    body {
+      font-size: 12px;
+      width: 100%;
+      padding-top: 20px;
+      margin: 0;
+      background-color: chocolate;
+    }
+    main {
+        width: 400px;
+        margin: 0 auto; /* Center the main content area on the page */
+        border: 4px solid black;
+        padding: 20px; /* Add some padding to the main content area */
+    }
+  }
+
+
+  Mobile:
+
+320px: Minimum width for most smartphones.
+375px: Common width for iPhone SE and older models.
+414px: Common width for iPhone X and newer models.
+Tablet:
+
+768px: Minimum width for most tablets.
+834px: Common width for iPad mini.
+1024px: Common width for iPad.
+Desktop:
+
+1200px: A common minimum width for desktop screens.
+1440px: A common width for high-resolution desktop monitors.

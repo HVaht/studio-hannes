@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Studio Hannes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/lay_mobile.css">
+    <link rel="stylesheet" href="css/lay_tablet.css">
+    <link rel="stylesheet" href="css/lay_desktop.css">
+    <script src="js/main.js"></script>
+</head>
+
+<!-- BODY -->
+<body>
+
+    <!-- LAYOUT -->
+    <div id="layout">
+
+        <!-- HEADER -->
+        <header>
+            <div class="header-grid-desktop">
+                <div class="grid-item">S</div>
+                <div class="grid-item">T</div>
+                <div class="grid-item">U</div>
+                <div class="grid-item">D</div>
+                <div class="grid-item">I</div>
+                <div class="grid-item">O</div>
+                <div class="grid-item">H</div>
+                <div class="grid-item">A</div>
+                <div class="grid-item">N</div>
+                <div class="grid-item">N</div>
+                <div class="grid-item">E</div>
+                <div class="grid-item">S</div>
+            </div>
+
+            <div class="grid-container-narrow">
+                <div class="grid-item">S/H</div>
+                <div class="grid-item">
+                    <div id="hamburger-menu">
+                    <div class="hamburger-icon-narrow" onclick="toggleMenu()">☰
+                        
+                    </div>
+                </div></div>
+            </div>
+
+            <div id="logo">Studio Hannes</div>
+            
+            <!-- LINKS -->
+            <nav class="nav-container">
+                <ul class="nav-links-left">
+                    <li class="nav-item"><a href="#hannes">Hannes</a></li>
+                    <li class="nav-item"><a href="#studio">Studio</a></li>
+                    <li class="nav-item"><a href="#furniture">Furniture</a></li>
+                    <li class="nav-item"><a href="#product-design">Industrial</a></li>
+                    <li class="nav-item"><a href="#software-design">Digital</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                </ul>
+                <ul class="nav-links-right">
+                    <li class="nav-item"><a href="#hannes">Light</a></li>
+                    <li class="nav-item"><a href="#studio">Dark</a></li>
+                    <li class="nav-item"><a href="#furniture"></a>Color</li>
+                </ul>
+            </nav>
+            
+            <!-- TOGGLERS WRAPPER -->
+            <div id="toggle_wrapper">
+                
+                <!-- THEME TOGGLER -->
+                <div id="theme-button">
+                    <button onclick="toggleTheme()">Theme</button>
+                </div>
+
+                <!-- HAMBURGER -->
+                <div id="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
+                </div>
+            </div>
+
+
+        
+        </header>
+        
+        <!-- MAIN -->
+        <main>
+            <div class="content-block" id="content_hannes">
+                <div class="content_half">
+                <img src="media/hannes_w.jpg" width="50%">
+                </div>
+                <div class="content_half">
+                <h1>Hannes</h1>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem doldddddorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.
+                </p>
+                </div>
+            </div>
+            
+            <div class="content-block" id="content_studio">
+                <h1>Studio</h1>
+                <p>
+                    1. Mobile:
+                    Media query: @media only screen and (max-width: 768px)
+                    Device type: (device-type: mobile)
+                </p>
+                <p>
+                    2. Tablet:
+                    Media query: @media only screen and (min-width: 769px) and (max-width:
+                    1024px)
+                    Device type: (device-type: tablet)
+                </p>
+                <p>3. Desktop:
+                    Media query: @media only screen and (min-width: 1025px)
+                    Device type: (device-tvoe: desktop)
+                </p>
+            </div>
+
+            <div class="content-block" id="content_services">
+                <h1>Services</h1>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem doldddddorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.
+                </p>
+            </div>
+
+            <div class="content-block" id="content_skills">
+                <h1>Skills</h1>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem doldddddorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quos est quidem saepe nesciunt natus, voluptates magnam sapiente vitae dolore illo veniam deserunt autem quia explicabo magni voluptatum harum perspiciatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Animi, eveniet delectus veritatis soluta eos fugiat tenetur distinctio corporis laboriosam accusamus dolores quidem dolorem porro quia cumque quasi. Laboriosam, dignissimos consectetur.
+                </p>
+            </div>
+
+            <div class="content-block" id="content_contact">
+                <h1>Contact</h1>
+                <p>
+
+
+                    Mobile:
+
+                    320px: Minimum width for most smartphones.
+                    375px: Common width for iPhone SE and older models.
+                    414px: Common width for iPhone X and newer models.
+                    Tablet:
+                    
+                    768px: Minimum width for most tablets.
+                    834px: Common width for iPad mini.
+                    1024px: Common width for iPad.
+                    Desktop:
+                    
+                    1200px: A common minimum width for desktop screens.
+                    1440px: A common width for high-resolution desktop monitors. (1240 work + (include 20padding*2=40) + 100px margin *2 = 200)
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>
+                © 2024 Studio Hannes Vaht
+            </p>
+
+        </footer>
+
+    </div>
+    
+</body>
+
+</html>

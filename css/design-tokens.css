@@ -1,0 +1,99 @@
+/**
+ * Design tokens — matches Paper layouts
+ * Mobile (390px), Tablet (768px), Desktop (1440px)
+ * Three themes: Light, Dark, Color
+ */
+
+:root {
+  /* Light mode (default) */
+  --color-bg: #faf9f6;
+  --color-text: #2b2926;
+  --color-text-muted: #6b6762;
+  --color-border: #e5e3df;
+  --color-accent: #5a7d4a;
+  --color-accent-secondary: #5a7d4a;
+
+  /* Typography — DM Sans (UI), Source Serif 4 (display) */
+  --font-ui: "DM Sans", system-ui, sans-serif;
+  --font-display: "Source Serif 4", Georgia, serif;
+
+  /* Mobile spacing */
+  --space-mobile-pad: 20px;
+  --space-mobile-section: 24px;
+  --header-pad-mobile: 16px 20px;
+  --main-pad-mobile: 24px 20px;
+  --footer-pad-mobile: 16px 20px;
+
+  /* Typography scale */
+  --text-logo-mobile: 18px;
+  --text-heading-mobile: 32px;
+  --text-body-mobile: 16px;
+  --text-footer-mobile: 12px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  :root {
+    --space-tablet-pad: 48px;
+    --space-tablet-section: 32px;
+    --header-pad-tablet: 20px 32px;
+    --main-pad-tablet: 40px 48px;
+    --footer-pad-tablet: 20px 32px;
+
+    --text-logo-tablet: 20px;
+    --text-heading-tablet: 40px;
+    --text-body-tablet: 17px;
+    --text-footer-tablet: 13px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  :root {
+    --space-desktop-pad: 64px;
+    --space-desktop-section: 32px;
+    --header-pad-desktop: 24px 64px;
+    --main-pad-desktop: 64px 80px;
+    --footer-pad-desktop: 24px 64px;
+
+    --text-logo-desktop: 22px;
+    --text-heading-desktop: 48px;
+    --text-body-desktop: 18px;
+    --text-footer-desktop: 13px;
+
+    --content-max-width: 800px;
+  }
+}
+
+/* Light theme — default, or [data-theme="light"] / .light-mode */
+[data-theme="light"],
+.light-mode {
+  --color-bg: #faf9f6;
+  --color-text: #2b2926;
+  --color-text-muted: #6b6762;
+  --color-border: #e5e3df;
+  --color-accent: #5a7d4a;
+  --color-accent-secondary: #5a7d4a;
+}
+
+/* Dark theme — [data-theme="dark"] / .dark-mode */
+[data-theme="dark"],
+.dark-mode {
+  --color-bg: #1a1918;
+  --color-text: #e8e6e2;
+  --color-text-muted: #8a8580;
+  --color-border: #3d3a37;
+  --color-accent: #5a7d4a;
+  --color-accent-secondary: #7a9d6a;
+}
+
+/* Color theme — [data-theme="color"] / .color-mode — warm, vibrant */
+[data-theme="color"],
+.color-mode {
+  --color-bg: #fdf6ed;
+  --color-text: #2d2520;
+  --color-text-muted: #7a6b5e;
+  --color-border: #e8d9c8;
+  --color-accent: #c45c26;
+  --color-accent-secondary: #5a7d4a;
+}
