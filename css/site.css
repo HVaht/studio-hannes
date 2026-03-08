@@ -81,15 +81,14 @@ body {
 
 .header-mobile.open .logo-cell {
   flex: 1;
-  border: 2px solid var(--color-text);
-  border-bottom: 2px solid var(--color-text); /* Line under S/H only, not under X */
+  border: none;
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text); /* Line under S/H only, divider to X+links */
 }
 
 .header-mobile.open .hamburger {
   background-color: var(--color-panel);
-  border: 2px solid var(--color-text);
-  border-left: none;
-  border-bottom: none;
+  border: none;
   padding: 16px 20px;
   min-width: 56px;
 }
