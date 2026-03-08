@@ -110,6 +110,47 @@ body {
   padding: 16px 20px;
 }
 
+/* Mobile header: theme + language toggles */
+.header-mobile-utils {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle,
+.lang-toggle {
+  display: flex;
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.theme-option,
+.lang-option {
+  padding: 4px 8px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.theme-option:hover,
+.lang-option:hover {
+  opacity: 0.9;
+}
+
+.theme-option.active,
+.lang-option.active {
+  background: var(--color-text);
+  color: var(--color-bg);
+  opacity: 1;
+}
+
 /* Hamburger / X button */
 .hamburger {
   display: flex;

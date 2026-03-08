@@ -24,7 +24,7 @@ document.querySelectorAll('.nav-mobile-overlay a').forEach(link => {
   });
 });
 
-// ——— Theme cycling (Light → Dark → Color → Light) ———
+// ——— Theme (Light → Dark → Color) ———
 const themes = ['light', 'dark', 'color'];
 
 function cycleTheme() {
@@ -32,12 +32,48 @@ function cycleTheme() {
   const current = html.getAttribute('data-theme') || 'light';
   const i = themes.indexOf(current);
   const next = themes[(i + 1) % themes.length];
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
+  setTheme(next);
 }
 
-// Restore saved theme
-const saved = localStorage.getItem('theme');
-if (saved && themes.includes(saved)) {
-  document.documentElement.setAttribute('data-theme', saved);
+function setTheme(theme) {
+  if (!themes.includes(theme)) return;
+  const html = document.documentElement;
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  document.querySelectorAll('.theme-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === theme);
+  });
+}
+
+// Restore saved theme & sync mobile toggle
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme && themes.includes(savedTheme)) {
+  document.documentElement.setAttribute('data-theme', savedTheme);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const theme = document.documentElement.getAttribute('data-theme') || 'light';
+  document.querySelectorAll('.theme-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === theme);
+  });
+});
+
+// ——— Language (FI / EN) ———
+function setLang(lang) {
+  if (!['fi', 'en'].includes(lang)) return;
+  const html = document.documentElement;
+  html.setAttribute('data-lang', lang);
+  html.setAttribute('lang', lang);
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  // TODO: Swap content via translations when Finnish copy is ready
+}
+
+// Restore saved language
+const savedLang = localStorage.getItem('lang');
+if (savedLang && ['fi', 'en'].includes(savedLang)) {
+  setLang(savedLang);
+} else {
+  setLang('en');
 }
