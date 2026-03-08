@@ -1,7 +1,7 @@
 # Deploy static site to GitHub Pages
 # See: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
 
-name: Deploy to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
@@ -13,6 +13,7 @@ permissions:
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
