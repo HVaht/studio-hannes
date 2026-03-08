@@ -97,8 +97,6 @@ body {
 .header-mobile.open .hamburger {
   background-color: var(--color-panel);
   border: none;
-  padding: 16px 20px;
-  min-width: 56px;
 }
 
 .logo-cell {
@@ -158,7 +156,7 @@ body {
   color: var(--color-accent);
 }
 
-/* Hamburger / X button */
+/* Hamburger / X button — fixed width so theme stays in same spot when menu opens */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -168,7 +166,9 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 16px 20px;
+  min-width: 56px;
+  flex-shrink: 0;
   position: relative;
 }
 
