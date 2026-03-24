@@ -14,81 +14,108 @@
         <div class="site-container">
             <!-- HEADER -->
             <header class="site-header">
-                <!-- Mobile: [S/H + theme] | hamburger -->
+                <!-- Mobile: logo + themes = border strip; hamburger + nav = panel strip (line between dot and X when open) -->
                 <div class="header-mobile">
-                    <div class="header-mobile-left">
-                        <div class="logo-cell">
-                            <span class="logo-short">S/H</span>
+                    <div class="header-mobile-brand">
+                        <div class="header-mobile-start">
+                            <div class="logo-cell">
+                                <span class="logo-short">S / H</span>
+                            </div>
                         </div>
-                        <button class="theme-cycle-btn" aria-label="Toggle theme" onclick="cycleTheme()" title="Theme">
-                            <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                            <svg class="theme-icon theme-dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
-                            <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-                        </button>
-                    </div>
-                    <button class="hamburger" id="hamburger-btn" aria-label="Menu" onclick="toggleMenu()">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-
-                <!-- Tablet/Desktop: logo + nav -->
-                <div class="header-desktop">
-                    <div class="header-top">
-                        <div class="logo-grid" aria-hidden="true">
-                            <div class="logo-row"><span style="--dx:3px;--dy:-2px">S</span><span style="--dx:-1px;--dy:4px">T</span><span style="--dx:2px;--dy:-3px">U</span><span style="--dx:-2px;--dy:1px">D</span><span style="--dx:1px;--dy:2px">I</span><span style="--dx:-3px;--dy:-1px">O</span></div>
-                            <div class="logo-row"><span style="--dx:-2px;--dy:3px">H</span><span style="--dx:2px;--dy:-2px">A</span><span style="--dx:1px;--dy:1px">N</span><span style="--dx:-1px;--dy:-4px">N</span><span style="--dx:3px;--dy:2px">E</span><span style="--dx:-2px;--dy:-1px">S</span></div>
-                        </div>
-                        <div class="header-utilities">
-                            <button class="theme-cycle-btn" aria-label="Toggle theme" onclick="cycleTheme()">
-                                <svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                                <svg class="theme-icon theme-dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
-                                <svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                        <div class="header-mobile-themes" role="group" aria-label="Theme">
+                            <button type="button" class="theme-cycle-btn theme-lightdark-btn" aria-label="Toggle light or dark mode" onclick="toggleLightDark()" title="Light / dark">
+                                <svg class="theme-icon desktop-ld-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                                <svg class="theme-icon desktop-ld-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                            </button>
+                            <button type="button" class="theme-cycle-btn theme-color-btn" data-color-theme-btn aria-pressed="false" aria-label="Warm color palette" onclick="toggleColorTheme()" title="Color theme">
+                                <svg class="theme-icon desktop-color-dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
                             </button>
                         </div>
                     </div>
+                    <button type="button" class="hamburger" id="hamburger-btn" aria-controls="nav-mobile" aria-expanded="false" aria-label="Site navigation" onclick="toggleMenu()">
+                        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <!-- Tablet/Desktop: 8×2 letter grid + nav (matches desktop mock) -->
+                <div class="header-desktop">
+                    <div class="header-top">
+                        <div class="header-letter-grid">
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">s</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">t</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">u</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">d</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">i</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">o</span></span>
+                            <span class="header-grid-cell header-grid-cell--empty" aria-hidden="true"></span>
+                            <div class="header-grid-cell header-grid-cell--control">
+                                <button type="button" class="theme-cycle-btn theme-lightdark-btn" aria-label="Toggle light or dark mode" onclick="toggleLightDark()" title="Light / dark">
+                                    <svg class="theme-icon desktop-ld-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                                    <svg class="theme-icon desktop-ld-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                                </button>
+                            </div>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">h</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">a</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">n</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">n</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">e</span></span>
+                            <span class="header-grid-cell header-grid-letter" aria-hidden="true"><span class="header-grid-letter-char">s</span></span>
+                            <span class="header-grid-cell header-grid-cell--empty" aria-hidden="true"></span>
+                            <div class="header-grid-cell header-grid-cell--control">
+                                <button type="button" class="theme-cycle-btn theme-color-btn" data-color-theme-btn aria-pressed="false" aria-label="Warm color palette" onclick="toggleColorTheme()" title="Color theme">
+                                    <svg class="theme-icon desktop-color-dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="header-nav">
-                        <nav class="nav-left">
-                            <a href="#hannes">HANNES</a>
-                            <a href="#studio">STUDIO</a>
-                            <a href="#work">WORK</a>
-                            <a href="#manifest">MANIFEST</a>
+                        <nav class="nav-left" aria-label="Primary">
+                            <a href="#studio">Studio</a>
+                            <a href="#hannes">Hannes</a>
+                            <a href="#work">Work</a>
+                            <a href="#skills">Skills</a>
+                            <a href="#philosophy">Philosophy</a>
                         </nav>
-                        <a href="#contact" class="nav-contact">CONTACT</a>
+                        <a href="#contact" class="nav-contact">Contact</a>
                     </div>
                 </div>
             </header>
 
             <!-- Mobile nav overlay (hamburger menu) -->
-            <nav class="nav-mobile-overlay" id="nav-mobile">
-                <a href="#hannes">HANNES</a>
-                <a href="#studio">STUDIO</a>
-                <a href="#work">WORK</a>
-                <a href="#manifest">MANIFEST</a>
-                <a href="#contact">CONTACT</a>
+            <nav class="nav-mobile-overlay" id="nav-mobile" aria-label="Primary" hidden>
+                <a href="#studio">Studio</a>
+                <a href="#hannes">Hannes</a>
+                <a href="#work">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="#philosophy">Philosophy</a>
+                <a href="#contact">Contact</a>
             </nav>
 
             <!-- MAIN -->
             <main class="site-main">
-                <section class="hero" id="hannes">
-                    <div class="hero-text">
-                        <p class="lead-in"><span class="lead">Hannes Vaht</span> is multidisciplinary product designer and development enthusiast from Helsinki, Finland.</p>
-                        <p>I believe good design lives at the intersection of craft and purpose. Every product, whether physical or digital, carries the imprint of the decisions made during its creation—and those decisions shape how people experience the world.</p>
-                        <p>My work spans furniture, industrial design, and software. What ties it together is a focus on clarity: reducing complexity without losing character, solving real problems without adding unnecessary ones.</p>
-                        <p>Based in Helsinki, I work with clients who care about substance over spectacle. When I'm not designing, I'm usually building things with code or exploring the city on my bike.</p>
-                    </div>
-                    <div class="hero-image">
-                        <img src="media/hannes_2.png" alt="Hannes Vaht">
-                    </div>
-                    <hr class="section-divider hero-divider">
-                </section>
-
                 <section id="studio">
-                    <p class="lead-in"><span class="lead">Studio</span> Hannes is a small practice built around the idea that design should be honest and enduring. We avoid trends in favour of solutions that age well and feel right.</p>
-                    <p>We work across disciplines—from one-off furniture commissions to digital products and brand systems. The common thread is a thoughtful approach: understanding context, asking questions, and iterating until the result feels inevitable.</p>
-                    <p>Our process is collaborative. We work closely with clients to clarify goals, explore directions, and refine details. The aim is always a coherent outcome, whether that's a chair, a website, or an identity.</p>
+                    <p class="lead-in"><span class="lead">Studio </span>Hannes is my one-man design studio specializing in products, furniture and digital design. Equally comfortable with wood, concrete, pixels &amp; code, I have a passion for 3D design, visualization, and helping people bring their ideas to life.</p>
+                    <p>My clients might have a vague idea or beginning of a great concept in mind — it’s sketched on paper, developed on screen, and ultimately built in real life. It’s a surprisingly complex process that often calls for a wide range of tools and techniques, from 3D modeling to printing or more advanced prototyping. Each stage offers a chance to catch costly mistakes, clarify the vision, and uncover new challenges ahead.</p>
+                    <p>My methods are iterative, flexible and thorough — listening closely, envisioning solutions together with my clients, and working with passion and determination. I approach projects from an end user’s point of view, while respecting the boundaries of manufacturing and logistics. Great user experiences are built upon great products and services, carefully crafted on top of well-thought-out concepts.</p>
+                    <p>Always looking for interesting projects, people, and opportunities to collaborate. Eager to dive into tricky challenges and ready to travel any distance, learn new tools, or help you find the right people and team to make it happen.</p>
                 </section>
 
                 <hr class="section-divider">
+
+                <section class="hero" id="hannes">
+                    <div class="hero-text">
+                        <p class="lead-in"><span class="lead">Hannes</span> is my name, and solving problems is what I do. Product designer and fine woodworker by training and self-taught software developer by passion. I spent some time dabbling in UX/UI along the way. This mix lets me bridge physical and digital craftsmanship seamlessly.</p>
+                        <p>I’m easily approachable, weirdly sociable for a Finn, and very comfortable in international waters. As a designer, I feel at home in almost any industry and love solving problems in multidisciplinary teams.</p>
+                        <p>As a reserve officer and former scout leader, I don’t shy away from responsibility or leadership either. Over the years, I’ve been active in many kinds of organizations — motivating people, supporting teams, and helping bring out the best in others. I bring wholehearted enthusiasm and commitment to every project I join.</p>
+                        <p>Honest communication and thinking outside the box aren’t just nice-to-haves — they’re essential parts of who I am. Currently working on complex modular concrete structures and eager to hear your crazy visions and pain points to solve.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img class="hero-image-img hero-image-img--light" src="media/hannes_3.png" alt="Hannes Vaht">
+                        <img class="hero-image-img hero-image-img--color" src="media/hannes_6_Color.png" alt="">
+                        <img class="hero-image-img hero-image-img--dark" src="media/hannes_4_Dark.png" alt="">
+                    </div>
+                    <hr class="section-divider hero-divider">
+                </section>
 
                 <section id="work">
                     <p class="lead-in"><span class="lead">Work</span>. Our portfolio reflects a range of projects—some public, some confidential. What connects them is a commitment to craft and a focus on the people who will use what we make.</p>
@@ -98,11 +125,17 @@
 
                 <hr class="section-divider">
 
-                <section id="manifest">
-                    <p class="lead-in"><span class="lead">Manifests</span> are not typical nowadays, but neither am I. Here are some of my thoughts on design and my way of working for you.</p>
-                    <p>We design for longevity. Products should outlive their launch hype and remain useful, beautiful, and meaningful for years. Planned obsolescence has no place in our practice.</p>
-                    <p>We favour restraint over excess. The best solutions often involve subtracting—removing the unnecessary so the essential can speak. Simplicity is a discipline, not a default.</p>
-                    <p>We believe craft matters. Whether working in wood, metal, or code, attention to detail compounds. The things we make reflect the care we put into making them.</p>
+                <section id="skills">
+                    <p class="lead-in"><span class="lead">Skills</span> cover the arc from material craft to digital delivery: fine woodworking, product and furniture design, CAD and visualization, UX/UI, and hands-on software development.</p>
+                    <p>Whether the output is a physical piece, a configured product family, or a shipped digital experience, I pick tools to match the problem — and learn new ones when the work calls for it.</p>
+                </section>
+
+                <hr class="section-divider">
+
+                <section id="philosophy">
+                    <p class="lead-in"><span class="lead">Philosophy</span> behind my work can be summarized like this: form follows function, timeless beats trendy, quality over mediocrity. Long-term business models and honest processes always trump short-term gains and shenanigans. I aim to build endurance — in products and the businesses behind them.</p>
+                    <p>Good design solves real problems and lasts. It respects budgets, physics, and daily users — not just render perfection. True beauty comes from what works: durability over flash, clarity over complexity, substance first.</p>
+                    <p>That’s why every project starts with hard questions about use cases, costs, and constraints. Trends are secondary — I’ll weave them in if they fit, but they never lead. If you’re building to endure, not just impress, this is how we roll.</p>
                 </section>
 
                 <hr class="section-divider">
@@ -117,7 +150,7 @@
 
             <!-- FOOTER -->
             <footer class="site-footer">
-                <p>© 2024 Studio Hannes Vaht</p>
+                <p>© 2026 Hannes Vaht / Studio Hannes</p>
             </footer>
         </div>
     </div>
